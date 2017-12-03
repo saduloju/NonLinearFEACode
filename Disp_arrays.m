@@ -1,3 +1,6 @@
+% code written by Sunday aduloju
+%modified on 12/2/2017
+
 
 %d_temp=del_d_steps(:,1)
 %delta_d =del_d(:,loadstep)
