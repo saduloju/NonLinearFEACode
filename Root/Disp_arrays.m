@@ -4,12 +4,12 @@
 
 %d_temp=del_d_steps(:,1)
 %delta_d =del_d(:,loadstep)
-delta_d=d_turnup;
+%delta_d=d_turnup;
 d_new=zeros (numnp*ndf,1);%d_applied;
 
 for i =1:numGNodeUnConstrained
     
-    d_new(GNodeUnConstrained(i))=delta_d(i);
+    d_new(GNodeUnConstrained(i))=d_iplus1(i);
 
 end
 

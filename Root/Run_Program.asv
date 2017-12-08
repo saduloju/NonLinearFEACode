@@ -138,11 +138,11 @@ disp(X)
   d_new=zeros(numnp*ndf,1);
 %   d_last=zeros(numnp*ndf,1);
 
-  d_iminus1=zeros(numGNodeUnConstrained,1); % initiate d_i-1 (iteration)
+  d_iplus1=zeros(numGNodeUnConstrained,1); % initiate d_i+1 (iteration)
   
   EpsilMultiplier=1e-6
  while normR >EpsilMultiplier*normRnot
-  d_iminus1;
+  d_i;
 
            %MatRout
            
@@ -154,8 +154,7 @@ disp(X)
         %%  Displacement increment
           del_d=Kddz2\ (F_ext-F_int);
           
-          d_iplus1=del_d + d_iminus1;
-          
+          d_turnup=del_d + d_turnup;
      %%     solve for the new displacement  
             d_new=zeros(numnp*ndf,1);
            Disp_arrays
@@ -190,13 +189,12 @@ disp(X)
                 disp('Residual norm ')
                 disp(normR)
                 
-      d_iminus1 =d_iplus1;
+
  end
          
  FinalResults 
  
- d_iplus1;
-  %d_turnup;
+  d_turnup;
   Kddz2;
   Disp_arrays
   DispList(:,loadstep)=d_applied;
