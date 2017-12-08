@@ -10,7 +10,7 @@
 clear all
 clc
 
- PSPS = 2  % plane stress=1, plane strain =2
+ PSPS = 2;  % plane stress=1, plane strain =2
  E=12000; % elastic modulus
  v=0.3; %poiisons ratio
 
@@ -18,7 +18,7 @@ clc
 MatType=6;
 K_not=100;
 K_prime=1000;
-K=K_not+K_prime
+K=K_not+K_prime;
 H_prime=3;
 
  
@@ -50,5 +50,5 @@ NodeBC=  [1 1 0
 %              4 2 1];  % Neumann bc] ;
 
 TotalTime=1;
- steps=2;
+ steps=100;
  
