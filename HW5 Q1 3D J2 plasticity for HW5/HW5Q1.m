@@ -66,13 +66,13 @@ for n = 1:nstep
     e_n = e_1*t*[1 0 0;0 1 0;0 0 4/5] + e_2*sin(t)*[0 2 0;2 1 0;0 0 5/3];
     eV_n = [e_n(1,1); e_n(2,2); e_n(3,3); 2*e_n(2,3); 2*e_n(1,3); 2*e_n(1,2)];
   
-    [beta_n, a_n,ep_n, sig_n,Cep_n] = J2RadialReturnSolve(K_not,K_prime,H_prime,K,miu,k,a_n_1,beta_n_1,eV_n,ep_n_1,e_n);
+    [beta_n, a_n,ep_n, sig_n,Cep_n] = J2RadialReturnSolve(K_not,K_prime,K,H_prime,miu,k,a_n_1,beta_n_1,eV_n,ep_n_1,e_n);
  
       beta_n_1 = beta_n;
       a_n_1 = a_n;
       ep_n_1= ep_n;
      
-     TangentStiffnessPlotted(n+1,:)=[Cep_n(1,1), Cep_n(2,2), Cep_n(3,3)];
+     TangentStiffnessPlotted(n+1,:)=[Cep_n(1,1), Cep_n(2,2), Cep_n(6,6)];
      sigmasV(n+1,:) = sig_n';
      %epsilsV(n+1,:) = eV_n';   %************
      epsilsplastV(n+1,:)= ep_n_1;
@@ -100,9 +100,9 @@ plot(times,betas(:,1),'r')
 hold on
 plot(times,betas(:,2),'b--')
 hold on
-plot(times,betas(:,3),'g--')
+plot(times,betas(:,6),'g--')
  hold on
-plot(times,betas(:,4),'m--') %uncomment for 2D
+plot(times,betas(:,3),'m--') %comment for 2D
 hold off
 %legend('\beta 11','\beta 22','\beta 12') % for 2D
 legend('\beta 11','\beta 22','\beta 33','\beta 12')  %%%for 3D

@@ -1,6 +1,6 @@
 
 
-addpath(genpath('C:\Users\Saduloju\Documents\GitHub\NonLinearFEACode/RootFolder'))
+addpath(genpath('C:\Users\Saduloju\Documents\GitHub\NonLinearFEACode/Root'))
   
   
   
