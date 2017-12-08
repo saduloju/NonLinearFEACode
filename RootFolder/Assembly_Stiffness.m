@@ -24,7 +24,7 @@ function [K_global,Kddz2,d_applied] = Assembly_Stiffness(numel,ix,numnp,ndf,Elem
             end
 
     end
-    K_global=Kddz
+    K_global=Kddz;
     
 
 
