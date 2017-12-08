@@ -20,9 +20,9 @@ plot(times,betas(:,1),'b--')
 hold on
 plot(times,betas(:,2),'r--')
 hold on
-plot(times,betas(:,3),'g--')
+plot(times,betas(:,6),'g--')
 % hold on
-% plot(times,betas(:,4),'m--')
+% plot(times,betas(:,3),'m--')
 hold off
 legend('\beta 11','\beta 22','\beta 12') % for 2D
 % legend('\beta 11','\beta 22','\beta 33','\beta 12')  %%%for 3D
@@ -50,7 +50,7 @@ subplot(2,2,4)
  hold on
  plot(times, TangentStiffnessPlotted(:,2),'b--')
  hold on
- plot(times,TangentStiffnessPlotted(:,3),'g-')
+ plot(times,TangentStiffnessPlotted(:,3),'g--')
 legend('C1111','C2222','C1212')
 title('C vs time')
 xlabel('t')
