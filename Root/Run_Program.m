@@ -112,7 +112,7 @@ NodeBC3=(NodeBC(:,3)/steps)*loadstep;
 % end
 
 
- F_internal_Solve
+ F_internal_Solve;
  
  
 [K_global,Kddz2,d_applied] = Assembly_Stiffness(numel,ix,numnp,ndf,ElemK,NodeBC,NodeBC3);
@@ -148,7 +148,7 @@ disp(X)
           %del_d=normR/ElemK
           % Assembly_Stiffness  
     %[Kddz2,d_applied] = Assembly_Stiffness(numel,ix,numnp,ndf,ElemK,NodeBC,NodeBC3);
-            Kddz2
+            Kddz2;
         %%  Displacement increment
           del_d=Kddz2\ (F_ext-F_int);
           
@@ -190,6 +190,7 @@ disp(X)
 
  end
          
+ FinalResults 
  
   d_turnup;
   Kddz2;

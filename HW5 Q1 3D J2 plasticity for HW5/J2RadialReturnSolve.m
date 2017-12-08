@@ -1,5 +1,7 @@
 
 function [beta_n, a_n,ep_n, sig_n,Cep_n] = J2RadialReturnSolve(K_not,K_prime,K,H_prime,miu,k,a_n_1,beta_n_1,eV_n,ep_n_1,e_n);
+
+ 
 % K_not=22
 % K_prime=2.5
 % H_prime=3.5
@@ -21,10 +23,12 @@ ID_strain= diag([1 1 1 2 2 2]); %Inverse identity mapping of stress to strain
     
     x_tr_n=s_tr_n - beta_n_1;
 
-     norm_x_tr_n = norm (x_tr_n) ;       
-    
+norm_x_tr_n = sqrt(   x_tr_n(1)*x_tr_n(1) +    x_tr_n(2)*x_tr_n(2) ...
+             +    x_tr_n(3)*x_tr_n(3) + 2*x_tr_n(4)*x_tr_n(4) ...
+             + 2*x_tr_n(5)*x_tr_n(5) + 2*x_tr_n(6)*x_tr_n(6));
+%      norm_x_tr_n = norm (x_tr_n) ;       
   
-     f_tr = norm_x_tr_n -sqrt(2/3)*K *a_n_1; 
+     f_tr = norm_x_tr_n -sqrt(2/3)*(K_not + K_prime *a_n_1); 
    
      
      	if f_tr <=1e-12

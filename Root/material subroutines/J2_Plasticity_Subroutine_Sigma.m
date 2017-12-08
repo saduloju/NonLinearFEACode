@@ -1,5 +1,5 @@
 
-[miu,k] = MoreMatProp(E,v)
+[miu,k] = MoreMatProp(E,v);
 
 
 %% This is all placed in in the 'Initialize Zeros' script
@@ -35,9 +35,9 @@
 
     [beta_n, a_n,ep_n, sig_n,Cep_n] = J2RadialReturnSolve(K_not,K_prime,K,H_prime,miu,k,a_n_1,beta_n_1,eV_n,ep_n_1);
  
-      beta_n_1 = beta_n;
-      a_n_1 = a_n;
-      ep_n_1= ep_n;
+%       beta_n_1 = beta_n;
+%       a_n_1 = a_n;
+%       ep_n_1= ep_n;
      
     
     
